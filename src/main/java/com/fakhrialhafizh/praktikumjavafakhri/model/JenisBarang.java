@@ -11,9 +11,20 @@ import java.sql.Connection;
  *
  * @author WIN8
  */
-public class JenisBarang {
+public class JenisBarang  {
     Connection con;
     
     private int id;
     private String namaJenisBarang;
+
+    public JenisBarang(Connection con) {
+        this.con = con;
+    }
+
+    public JenisBarang(int id, String namaJenisBarang) {
+        this.id = id;
+        this.namaJenisBarang = namaJenisBarang;
+    }
+    
+    
 }
