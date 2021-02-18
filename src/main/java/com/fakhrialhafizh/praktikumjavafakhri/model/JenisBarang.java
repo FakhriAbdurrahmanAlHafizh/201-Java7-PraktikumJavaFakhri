@@ -8,8 +8,12 @@ package com.fakhrialhafizh.praktikumjavafakhri.model;
 import com.fakhrialhafizh.praktikumjavafakhri.template.MyModelInterface;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -67,7 +71,28 @@ public class JenisBarang implements MyModelInterface{
 
     @Override
     public ArrayList<Object> read() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<Object> list = new ArrayList<>();
+        
+        String selectSQL = "SELECT * FROM jenisbarang";
+        
+        try {
+            Statement statement = this.con.createStatement();
+            ResultSet resultSet = statement.executeQuery(selectSQL);
+            
+            while (resultSet.next()) {
+                JenisBarang jb = new JenisBarang(
+                            resultSet.getInt(1),
+                            resultSet.getString(2)
+                );
+                list.add(jb);
+                System.out.println(resultSet.getString(2));
+                
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+        
+        return list;
     }
 
     @Override
