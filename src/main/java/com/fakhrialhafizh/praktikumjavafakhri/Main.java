@@ -21,7 +21,9 @@ public class Main {
 //        System.out.println(jb.getNamaJenisBarang());
         
           jenisBarang.setId(10);
-        jenisBarang.setNamaJenisBarang("test test");
-        jenisBarang.update();
+//        jenisBarang.setNamaJenisBarang("test test");
+//        jenisBarang.update();
+
+            jenisBarang.delete();
     }
 }
