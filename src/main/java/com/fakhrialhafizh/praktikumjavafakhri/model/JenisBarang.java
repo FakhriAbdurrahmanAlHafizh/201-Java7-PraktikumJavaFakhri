@@ -55,8 +55,7 @@ public class JenisBarang implements MyModelInterface{
     public boolean create() {
         boolean berhasil = false;
         
-        String insertSQL = "INSERT INTO jenisbarang VALUES "
-                + "(NULL,?)";
+        String insertSQL = "INSERT INTO jenisbarang VALUES (NULL,?)";
         try {
             PreparedStatement ps = this.con.prepareStatement(insertSQL);
             ps.setString(1, this.namaJenisBarang);
@@ -85,7 +84,7 @@ public class JenisBarang implements MyModelInterface{
                             resultSet.getString(2)
                 );
                 list.add(jb);
-                System.out.println(resultSet.getString(2));
+                
                 
             }
         } catch (SQLException ex) {
