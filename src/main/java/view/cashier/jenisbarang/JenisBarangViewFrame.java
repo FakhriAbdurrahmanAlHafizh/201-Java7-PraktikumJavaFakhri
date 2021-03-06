@@ -7,6 +7,8 @@ package view.cashier.jenisbarang;
 
 import com.fakhrialhafizh.praktikumjavafakhri.db.Database;
 import com.fakhrialhafizh.praktikumjavafakhri.model.JenisBarang;
+import com.fakhrialhafizh.praktikumjavafakhri.template.CustomFrame;
+import com.fakhrialhafizh.praktikumjavafakhri.template.ViewFrameInterface;
 import java.sql.Connection;
 import java.util.ArrayList;
 import static java.util.Collections.list;
@@ -18,8 +20,8 @@ import javax.swing.table.TableModel;
  *
  * @author WIN8
  */
-public class JenisBarangViewFrame extends javax.swing.JFrame {
-
+public class JenisBarangViewFrame extends CustomFrame
+   implements ViewFrameInterface{
     /**
      * Creates new form JenisBarangViewFrame
      */
@@ -302,4 +304,18 @@ public class JenisBarangViewFrame extends javax.swing.JFrame {
         
         mengisiTable(list);
     }
+
+    @Override
+    public void refresh() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void buildTable(ArrayList<Object> list) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+ 
+
+    
 }
